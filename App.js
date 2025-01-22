@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
     import Video from 'react-native-video';
     import { GestureHandlerRootView } from 'react-native-gesture-handler';
     import { SafeAreaProvider } from 'react-native-safe-area-context';
+    import { useDevClient } from 'expo-dev-client';
 
     const videos = [
       { uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' },
@@ -15,6 +16,7 @@ import React, { useRef, useState } from 'react';
     export default function App() {
       const [currentIndex, setCurrentIndex] = useState(0);
       const videoRef = useRef(null);
+      const { isDevelopmentMode } = useDevClient();
 
       const onBuffer = ({ isBuffering }) => {
         console.log('Buffering:', isBuffering);
