@@ -1,5 +1,15 @@
 {
       "build": {
+        "development": {
+          "developmentClient": true,
+          "distribution": "internal",
+          "android": {
+            "gradleCommand": ":app:assembleDebug"
+          },
+          "ios": {
+            "buildConfiguration": "Debug"
+          }
+        },
         "preview": {
           "distribution": "internal",
           "android": {
